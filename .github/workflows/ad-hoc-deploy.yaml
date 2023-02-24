@@ -1,0 +1,43 @@
+name: Ad Hoc Deployment
+
+env:
+  PREFECT_API_KEY: ${{ secrets.PREFECT_API_KEY }}
+  PREFECT_API_URL: ${{ secrets.PREFECT_API_URL }}
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ad-hoc-deployment:
+    name: Build and apply deployment
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Set up Python 3.11.1
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11.1"
+          cache: "pip"
+          cache-dependency-path: "requirements*.txt"
+
+      - name: Install packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install --upgrade --upgrade-strategy eager -r requirements.txt
+
+      - name: Build and apply deployment
+        run: |
+          prefect deployment build ./flows/pipeline.py:hello \
+          --name "Ad Hoc Deployment" \
+          -v $GITHUB_SHA \
+          --params '{"user_input": "github action"}'
+          --apply

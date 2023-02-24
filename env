@@ -1,0 +1,7 @@
+# until this bug is fixed, careful not to name env var PREFECT_API_KEY
+# https://github.com/PrefectHQ/prefect/issues/7797
+PREFECT_KEY=your-api-key
+# format: your-account-name/your-account-workspace
+PREFECT_WORKSPACE=your-workspace-name
+# you get this by running the make get-prefect-api-url task
+PREFECT_API_URL=your-url
