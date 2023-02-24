@@ -37,9 +37,8 @@ jobs:
       - name: Build and apply deployment
         run: |
           prefect deployment build ./pipeline.py:hello \
-          --name "Ad Hoc Deployment" \
+          --name "Ad Hoc Deployment without GHStorage" \
           --version $GITHUB_SHA \
           --params '{"user_input": "github action"}' \
           --work-queue github \
-          --storage-block github/test \
           --apply
