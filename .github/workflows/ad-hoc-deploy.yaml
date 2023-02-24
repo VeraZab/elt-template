@@ -38,8 +38,8 @@ jobs:
         run: |
           prefect deployment build ./pipeline.py:hello \
           --name "Ad Hoc Deployment" \
-          --params '{"user_input": "github action"}' \
           --version $GITHUB_SHA \
+          --params '{"user_input": "github action"}' \
           --work-queue github \
-          --storage-block test \
+          --storage-block github/test \
           --apply
