@@ -4,4 +4,4 @@ PREFECT_KEY=your-api-key
 # format: your-account-name/your-account-workspace
 PREFECT_WORKSPACE=your-workspace-name
 # you get this by running the make get-prefect-api-url task
-PREFECT_API_URL=your-url
+PREFECT_API_URL=your-api-url
