@@ -36,10 +36,9 @@ jobs:
 
       - name: Build and apply deployment
         run: |
-          prefect deployment build pipeline.py:hello \
+          prefect deployment build ./flows/pipeline.py:hello \
           --name "Ad Hoc Deployment" \
           --params '{"user_input": "github action"}' \
           --version $GITHUB_SHA \
-          --tag ad-hoc-gh \
           --work-queue github \
           --apply
