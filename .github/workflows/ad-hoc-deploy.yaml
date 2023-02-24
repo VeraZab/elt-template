@@ -1,4 +1,4 @@
-name: Ad Hoc Deployment
+name: Ad Hoc 2
 
 env:
   PREFECT_API_KEY: ${{ secrets.PREFECT_API_KEY }}
