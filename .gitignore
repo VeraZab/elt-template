@@ -4,6 +4,7 @@
 # Python environment
 venv
 __pycache__
+.mypy_cache
 
 # Environment variables
 .env

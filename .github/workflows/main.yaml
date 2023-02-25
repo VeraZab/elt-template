@@ -1,4 +1,4 @@
-name: Ad Hoc 2
+name: Build and Apply Flows on Manual Trigger
 
 env:
   PREFECT_API_KEY: ${{ secrets.PREFECT_API_KEY }}
@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  ad-hoc-deployment:
+  build-and-apply-deployment:
     name: Build and apply deployment
 
     runs-on: ubuntu-latest

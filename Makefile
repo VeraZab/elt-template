@@ -1,16 +1,32 @@
 include .env
 
-install-requirements-dev:
-	(\
-		python -m pip install --upgrade pip &&\
-		pip install --upgrade --upgrade-strategy eager -r requirements-dev.txt\
-	)
+####################################################################################################################
+# Setting up environment
 
-install-requirements-prod:
+install-requirements:
 	(\
 		python -m pip install --upgrade pip &&\
 		pip install --upgrade --upgrade-strategy eager -r requirements.txt\
 	)
+
+
+####################################################################################################################
+# Testing, auto formatting, type checks, & Lint checks
+
+format:
+	python -m black -S --line-length 119 .
+
+isort:
+	isort .
+
+lint: 
+	flake8 ./flows
+
+lint-and-format: isort format lint
+
+
+####################################################################################################################
+# Prefect
 
 prefect-cloud-login:
 	(\
@@ -28,8 +44,3 @@ prefect-api-url:
 		prefect config view &&\
 		make prefect-cloud-logout\
 	)
-
-
-
-
-
