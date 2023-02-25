@@ -5,9 +5,7 @@ env:
   PREFECT_API_URL: ${{ secrets.PREFECT_API_URL }}
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   ad-hoc-deployment:
