@@ -32,17 +32,17 @@
 </details>
 
 <details>
-<summary>Google Cloud Platform Project</summary>
+<summary>Google Cloud Platform and gcloud CLI</summary>
 
-1. Create a project in Google Cloud
-   ![create new GC project](/utilities/images/new-project-name.png)
-   ![go into the project](/utilities/images/select-project.png)
+1. Create an account on Google Cloud Platform
+1. Install [gcloud cli](https://cloud.google.com/sdk/docs/install-sdk)
+1. Run `gcloud init` and follow instructions to setup your project (projectID must be unique across all projects ever created by all users in google cloud)
+1. Run `gcloud info` to check that all is configured correctly, you should see that your CLI is configured to use your created project
+1. Enter your newly created projectID into the .env file
+1. Fill out the rest of the environment variables that relate to GCP
+1. Run `make gcp-setup`, this will create a service account with editor permissions, and download a json format api key to the path you specified in .env file,
+   make sure to include this file to .gitignore so its not version controlled
 
-1. Create a new IAM service account for big query, give it BigQuery Admin access
-   ![creating a new service account](/utilities/images/iam-service-account.png)
-1. Create an access key for that IAM service account by generating it in json form (click manage keys, then add key, then generate in json format)
-   ![creating a new service account](/utilities/images/generate-access-key.png)
-1. Store that key somewhere safe, DO NOT SHARE. We'll use this later and will need to specify the path to this key
 </details>
 
 <details>
