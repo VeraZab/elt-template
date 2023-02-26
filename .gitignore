@@ -11,3 +11,8 @@ __pycache__
 
 # GCP
 gcp-credentials.json
+
+# Terraform
+.terraform
+.terraform.lock.hcl
+terraform.tfstate
