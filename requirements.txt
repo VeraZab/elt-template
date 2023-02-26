@@ -1,3 +1,5 @@
-python-dotenv
+pandas
+pandas-gbq
 prefect
 prefect_gcp
+python-dotenv
