@@ -63,7 +63,7 @@ It is also recommended that you use a Python version manager and a virtual envir
 1. Configure your dbt cloud account with your github account.
    ![dbt github config](/utilities/images/dbt-github.png)
 1. Configure your external connections. ![external connections](/utilities/images/dbt-connections-config.png)
-1. Also include a project subdirectory in the field that asks for it. This will create that project folder, and when you click "Initialize Project" it will put all of the dbt related folders into that parent folder you created.
+1. Also include a project subdirectory in the field that asks for it. This will create that project folder. Later on, when you click "Initialize Project" it will put all of the dbt related folders into that parent folder you created.
 
 </details>
 
