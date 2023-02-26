@@ -46,8 +46,11 @@ prefect-api-url:
 		make prefect-cloud-logout\
 	)
 
+prefect-register-blocks:
+	prefect block register --module prefect_gcp
+
 prefect-blocks:
-	python ./utilities/setup-prefect-blocks.py
+	prefect block register --file ./utilities/setup-prefect-blocks.py
 
 ####################################################################################################################
 # Google Cloud

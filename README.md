@@ -10,6 +10,8 @@
 
 <details>
 <summary>Python 3</summary>
+This project was tested with Python 3.11.1, please install that version for best results.
+It is also recommended that you use a Python version manager and a virtual environment to install your dependencies.
 </details>
 
 <details>
@@ -31,7 +33,7 @@
 <summary>Terraform</summary>
 
 1. [Install Terraform](https://developer.hashicorp.com/terraform/downloads?ajs_aid=f70c2019-1bdc-45f4-85aa-cdd585d465b4&product_intent=terraform)
-1. Make sure you have the GOOGLE_APPLICATION_CREDENTIALS environment variable set, this should have happened at the GCP setup step, when you exported all your env vars
+1. Make sure you have the `GOOGLE_APPLICATION_CREDENTIALS` environment variable set, this should have happened at the GCP setup step, when you exported all your env vars
 1. Change all the values in the `variables.tf` file to your own
 1. Run `terraform init` to initialize
 1. Run `terraform plan` to see the changes to be applied
@@ -56,6 +58,13 @@
 
 <details>
 <summary>dbt Cloud</summary>
+
+1. Register to dbt cloud
+1. Configure your dbt cloud account with your github account.
+   ![dbt github config](/utilities/images/dbt-github.png)
+1. Configure your external connections. ![external connections](/utilities/images/dbt-connections-config.png)
+1. Also include a project subdirectory in the field that asks for it. This will create that project folder, and when you click "Initialize Project" it will put all of the dbt related folders into that parent folder you created.
+
 </details>
 
 <details>
