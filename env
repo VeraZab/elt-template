@@ -1,0 +1,39 @@
+
+####################################################################################################################
+# PREFECT CLOUD
+
+# until this bug is fixed, careful not to name env var PREFECT_API_KEY
+# https://github.com/PrefectHQ/prefect/issues/7797
+PREFECT_KEY=
+PREFECT_WORKSPACE= #in the format of account-name/project-name
+# PREFECT_API_URL= this should be commented out until we run the make prefect-api-url command
+
+####################################################################################################################
+# PREFECT BLOCKS
+
+GITHUB_REPO_URL=
+GITHUB_BLOCK_NAME=
+GCP_CREDENTIALS_BLOCK_NAME=
+DBT_CORE_BLOCK_NAME=
+
+####################################################################################################################
+# GOOGLE CLOUD PLATFORM
+
+GCP_PROJECT_ID=
+GCP_SERVICE_ACCOUNT_NAME=
+GCP_API_KEY_FILE_PATH= #give the full absolute path, including filename: gcp-credentials.json, do not use ~
+GCP_RESOURCE_REGION=
+GCP_DATASET_NAME=my_warehouse #if you change these don't forget to also change in dbt project and terraform
+GCP_DATASET_TABLE_NAME=fhv_taxi_rides_template #if you change these don't forget to also change in dbt project
+
+####################################################################################################################
+# TERRAFORM
+
+GOOGLE_APPLICATION_CREDENTIALS=$GCP_API_KEY_FILE_PATH
+
+####################################################################################################################
+# DBT CORE
+
+DBT_CORE_WORK_DIR= #give the full absolute path, do not use ~
+DBT_CORE_PROJECT_DIR= #give the full absolute path, do not use ~
+

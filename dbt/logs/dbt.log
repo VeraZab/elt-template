@@ -1,0 +1,20 @@
+
+
+============================== 2023-02-28 15:14:18.753745 | cdd6c7fa-5c76-4b4c-9bc3-6c3b54d991aa ==============================
+[0m15:14:18.753745 [info ] [MainThread]: Running with dbt=1.4.3
+[0m15:14:18.755554 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/verazabeida/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'skip_profile_setup': False, 'which': 'init', 'indirect_selection': 'eager'}
+[0m15:14:18.755802 [debug] [MainThread]: Tracking: tracking
+[0m15:14:18.768709 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c4d13d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c4d2550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c4d2450>]}
+[0m15:14:22.925893 [debug] [MainThread]: Starter project path: /Users/verazabeida/me/zoomcamp-project/family_friendly_nyc/venv/lib/python3.11/site-packages/dbt/include/starter_project
+[0m15:14:28.510709 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c4eb750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c4eadd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c4e9950>]}
+[0m15:14:28.511376 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-02-28 15:14:57.858452 | 5024299f-d5c7-4620-bb0e-f14422a5193f ==============================
+[0m15:14:57.858452 [info ] [MainThread]: Running with dbt=1.4.3
+[0m15:14:57.860260 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/verazabeida/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'skip_profile_setup': False, 'which': 'init', 'indirect_selection': 'eager'}
+[0m15:14:57.860511 [debug] [MainThread]: Tracking: tracking
+[0m15:14:57.872729 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1070c49d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1070c55d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1070c6a50>]}
+[0m15:15:01.204270 [info ] [MainThread]: A project called test already exists here.
+[0m15:15:01.205083 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1070c6a50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1070c6810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1070c5490>]}
+[0m15:15:01.205600 [debug] [MainThread]: Flushing usage events
