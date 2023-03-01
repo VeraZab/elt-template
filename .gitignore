@@ -16,6 +16,3 @@ gcp-credentials.json
 .terraform
 .terraform.lock.hcl
 terraform.tfstate
-
-# Poetry
-poetry.lock
