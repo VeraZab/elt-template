@@ -38,6 +38,7 @@ def load(blob):
     cache_key_fn=task_input_hash,
     cache_expiration=timedelta(days=1),
     log_prints=True,
+    task_run_name="extracting:{month}-{year}",
 )
 def extract(month, year):
     """Extract csv data from source"""
@@ -57,8 +58,8 @@ def main(month=1, year=2019):
     """Run all parametrized extraction and loading flows"""
 
     blob = extract(month, year)
-    load(blob)
-    transform()
+    # load(blob)
+    # transform()
 
 
 if __name__ == "__main__":
