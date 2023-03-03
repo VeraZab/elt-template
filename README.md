@@ -81,7 +81,6 @@ Creation steps for a [remote github repository here](https://docs.github.com/en/
    make sure to include this file to `.gitignore` so its not version controlled.
 1. Run `set -o allexport && source .env && set +o allexport` to export all variables, as we're going to need some of them for Terraform setup next.
 1. Make sure you have the `GOOGLE_APPLICATION_CREDENTIALS` environment variable set, this should have happened at the GCP setup step, when you exported all your env vars. You can check with `echo $GOOGLE_APPLICATION_CREDENTIALS`.
-1. Change all the values in the `variables.tf` file to your own.
 1. Go into your terraform directory `cd terraform`
 1. Run `terraform init` to initialize.
 1. Run `terraform plan` to see the changes to be applied.
@@ -121,6 +120,7 @@ Creation steps for a [remote github repository here](https://docs.github.com/en/
 
 ## To do:
 
+- Use Prefect Orion
+- Make a startup.sh script to reduce startup steps
+- Experiment with Docker and running all this in a container
 - Make prefect agent run on CloudRun, and use Artifact Registry for the Docker Image that will run Prefect Agent
-- Use env vars in Terraform files
-- Quite a bit of steps here to setup, see what I can automate more

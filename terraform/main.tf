@@ -9,12 +9,12 @@ terraform {
 }
 
 provider "google" {
-  project = var.project
-  region = var.region
+  project = var.PROJECT
+  region = var.REGION
 }
 
 resource "google_bigquery_dataset" "dataset" {
-  dataset_id = var.BQ_DATASET
-  project    = var.project
-  location   = var.region
+  dataset_id = var.DATASET_NAME
+  project    = var.PROJECT
+  location   = var.REGION
 }
