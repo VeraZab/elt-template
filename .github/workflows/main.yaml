@@ -1,7 +1,6 @@
 name: Build and Apply Flows on Manual Trigger
 
 env:
-  PREFECT_API_KEY: ${{ secrets.PREFECT_API_KEY }}
   PREFECT_API_URL: ${{ secrets.PREFECT_API_URL }}
   PREFECT_GITHUB_BLOCK_NAME: ${{ secrets.PREFECT_GITHUB_BLOCK_NAME }}
 
@@ -42,7 +41,7 @@ jobs:
       - name: Build and apply deployment
         run: |
           poetry run prefect deployment build ./flows/pipeline.py:main \
-          --name "Initial Deployment from Github Action" \
+          --name "Local Prefect Orion" \
           --version $GITHUB_SHA \
           --work-queue github \
           --storage-block github/$PREFECT_GITHUB_BLOCK_NAME \
