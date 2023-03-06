@@ -21,7 +21,7 @@ To install Poetry you can view the [installation instructions here](https://pyth
 <details>
 <summary>Google Cloud Platform Account</summary>
 
-Sign up for a free test account [here](https://cloud.google.com/free/).
+Sign up for a free test account [here](https://cloud.google.com/free/), and enable billing.
 
 </details>
 
@@ -76,6 +76,8 @@ Creation steps for a [remote github repository here](https://docs.github.com/en/
 1. Run `gcloud init` and follow instructions to setup your project. </br>
 1. Run `gcloud info` to check that all is configured correctly, you should see that your CLI is configured to use your created project.
 1. Enter your newly created projectID into the `.env` file
+1. Enable google cloud billing.
+1. Enable the `gcloud` services that we'll use (bigquery, compute engine) `gcloud services enable compute.googleapis.com`
 1. Fill out the rest of the environment variables that relate to GCP
 1. Run `make gcp-setup`, this will create a service account with editor permissions, and download a json format api key to the path you specified in `.env` file,
    make sure to include this file to `.gitignore` so its not version controlled.
