@@ -13,7 +13,7 @@ load_dotenv()
 
 @task()
 def transform():
-    dbt_op = DbtCoreOperation.load(os.getenv("DBT_CORE_BLOCK_NAME"))
+    dbt_op = DbtCoreOperation.load(os.getenv("PREFECT_DBT_CORE_BLOCK_NAME"))
     dbt_op.run()
 
 
@@ -23,7 +23,7 @@ def load(blob):
     dataset_name = os.getenv("GCP_DATASET_NAME")
     dataset_table_name = os.getenv("GCP_DATASET_TABLE_NAME")
 
-    gcp_credentials = GcpCredentials.load(os.getenv("GCP_CREDENTIALS_BLOCK_NAME"))
+    gcp_credentials = GcpCredentials.load(os.getenv("PREFECT_GCP_CREDENTIALS_BLOCK_NAME"))
 
     blob.to_gbq(
         destination_table=f"{dataset_name}.{dataset_table_name}",

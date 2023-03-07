@@ -1,6 +1,6 @@
 # ELT Project Template [BigQuery, Prefect Cloud, Dbt Core, Terraform]
 
-The intent of this template is to quickstart development of your data pipeline, with BigQuery, Prefect Cloud, Dbt Core, and Terraform.
+The intent of this template is to quickstart development of your data pipeline, with BigQuery, Prefect open source, Dbt Core, and Terraform.
 
 ## Prerequisites:
 
@@ -29,19 +29,6 @@ Sign up for a free test account [here](https://cloud.google.com/free/), and enab
 <summary>Google Cloud CLI</summary>
 
 Installation instruction for `gcloud` [here](https://cloud.google.com/sdk/docs/install-sdk).
-
-</details>
-
-<details>
-<summary>Prefect Cloud Account / Project / API KEY</summary>
-
-1. [Sign up and login to Prefect Cloud](https://app.prefect.cloud/auth/login).
-1. Create a workspace
-   ![creating a new workspace](/utilities/images/prefect-cloud-create-workspace.png).
-1. Create an API key for your cloud account by going to the menu at the bottom of the screen and clicking on your profile name, then clicking on API KEYS
-   ![go to API KEYS](/utilities/images/api-settings.png) ![create a new API KEY](/utilities/images/create-api-keys.png)
-1. Copy paste your API KEY into your .env file, it will only be shown to you once.
-1. Fill in the environment variable corresponding to your workspace [the format will be <yourAccountName/yourWorkspaceName>].
 
 </details>
 
