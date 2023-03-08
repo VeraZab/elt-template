@@ -1,5 +1,4 @@
 import os
-from datetime import timedelta
 
 import pandas as pd
 from dotenv import load_dotenv
@@ -35,8 +34,6 @@ def load(blob):
 
 @task(
     retries=3,
-    cache_key_fn=task_input_hash,
-    cache_expiration=timedelta(days=1),
     log_prints=True,
     task_run_name="extracting:{month}-{year}",
 )
