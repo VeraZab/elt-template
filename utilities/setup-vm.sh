@@ -33,15 +33,15 @@ curl -sSL https://install.python-poetry.org | POETRY_HOME=/usr/local/lib python3
 poetry install --no-root --without dev
 
 export EXTERNAL_VM_IP=`curl  -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/instance/attributes/EXTERNAL_VM_IP"`
-export GCP_DATASET_NAME=`curl  -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/instance/attributes/GCP_DATASET_NAME"`
 export SERVICE_ACCOUNT_FILE_PATH=`curl  -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/instance/attributes/SERVICE_ACCOUNT_FILE_PATH"`
+export GCP_DATASET_NAME=`curl  -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/instance/attributes/GCP_DATASET_NAME"`
 export GCP_REGION=`curl  -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/instance/attributes/GCP_REGION"`
 export GCP_PROJECT_ID=`curl  -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/instance/attributes/GCP_PROJECT_ID"`
-export PREFECT_AGENT_QUEUE=`curl  -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/instance/attributes/PREFECT_AGENT_QUEUE"`
-export DBT_CORE_BLOCK_NAME=`curl  -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/instance/attributes/DBT_CORE_BLOCK_NAME"`
 export GCP_DATASET_TABLE_NAME=`curl  -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/instance/attributes/GCP_DATASET_TABLE_NAME"`
-export DBT_PROFILE_NAME=`curl  -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/instance/attributes/DBT_PROFILE_NAME"`
+export PREFECT_AGENT_QUEUE=`curl  -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/instance/attributes/PREFECT_AGENT_QUEUE"`
+export PREFECT_DBT_CORE_BLOCK_NAME=`curl  -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/instance/attributes/PREFECT_DBT_CORE_BLOCK_NAME"`
 export PREFECT_GCP_CREDENTIALS_BLOCK_NAME=`curl  -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/instance/attributes/PREFECT_GCP_CREDENTIALS_BLOCK_NAME"`
+export DBT_PROFILE_NAME=`curl  -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/instance/attributes/DBT_PROFILE_NAME"`
 
 prefect config set PREFECT_API_URL="http://${EXTERNAL_VM_IP}:4200/api"
 
