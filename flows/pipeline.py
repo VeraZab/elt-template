@@ -58,8 +58,8 @@ def main(month=1, year=2019):
     """Run all parametrized extraction and loading flows"""
 
     blob = extract(month, year)
-    # load(blob)
-    # transform()
+    load(blob)
+    transform()
 
 
 if __name__ == "__main__":

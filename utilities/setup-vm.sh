@@ -22,6 +22,7 @@ make -j "$(nproc)"
 sudo make altinstall
 export PATH="/usr/local/lib/bin:$PATH"
 
+cd /
 git clone https://github.com/VeraZab/elt-template.git
 cd elt-template
 
@@ -50,14 +51,14 @@ echo "
     ${DBT_PROFILE_NAME}:
         outputs:
             dev:
-            dataset: ${DATASET_NAME}
+            dataset: ${GCP_DATASET_NAME}
             job_execution_timeout_seconds: 300
             job_retries: 1
             keyfile: ${SERVICE_ACCOUNT_FILE_PATH}
-            location: ${REGION}
+            location: ${GCP_REGION}
             method: service-account
             priority: interactive
-            project: ${PROJECT}
+            project: ${GCP_PROJECT_ID}
             threads: 4
             type: bigquery
         target: dev" >> ~/.dbt/profiles.yml
