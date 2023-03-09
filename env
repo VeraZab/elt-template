@@ -1,39 +1,42 @@
-
 ####################################################################################################################
-# PREFECT CLOUD
+# PREFECT
 
-# until this bug is fixed, careful not to name env var PREFECT_API_KEY
-# https://github.com/PrefectHQ/prefect/issues/7797
-PREFECT_KEY=
-PREFECT_WORKSPACE= #in the format of account-name/project-name
-# PREFECT_API_URL= this should be commented out until we run the make prefect-api-url command
+PREFECT_API_URL=
+PREFECT_AGENT_QUEUE_NAME=
 
-####################################################################################################################
-# PREFECT BLOCKS
-
+# For Prefect Blocks
 GITHUB_REPO_URL=
-GITHUB_BLOCK_NAME=
-GCP_CREDENTIALS_BLOCK_NAME=
-DBT_CORE_BLOCK_NAME=
+PREFECT_GITHUB_BLOCK_NAME=
+PREFECT_GCP_CREDENTIALS_BLOCK_NAME=
+PREFECT_DBT_CORE_BLOCK_NAME=
 
 ####################################################################################################################
 # GOOGLE CLOUD PLATFORM
+# GCP_API_KEY_FILE_PATH: give the full absolute path, including filename
 
 GCP_PROJECT_ID=
 GCP_SERVICE_ACCOUNT_NAME=
-GCP_API_KEY_FILE_PATH= #give the full absolute path, including filename: gcp-credentials.json, do not use ~
+GCP_API_KEY_FILE_PATH=
 GCP_RESOURCE_REGION=
-GCP_DATASET_NAME=my_warehouse #if you change these don't forget to also change in dbt project and terraform
-GCP_DATASET_TABLE_NAME=fhv_taxi_rides_template #if you change these don't forget to also change in dbt project
+GCP_DATASET_NAME=
+GCP_DATASET_TABLE_NAME=
+GCP_COMPUTE_ENGINE_NAME=
+GCP_COMPUTE_ENGINE_MACHINE_TYPE=e2-small
+GCP_SERVICE_ACCOUNT_EMAIL=
 
 ####################################################################################################################
 # TERRAFORM
 
-GOOGLE_APPLICATION_CREDENTIALS=$GCP_API_KEY_FILE_PATH
-
-####################################################################################################################
-# DBT CORE
-
-DBT_CORE_WORK_DIR= #give the full absolute path, do not use ~
-DBT_CORE_PROJECT_DIR= #give the full absolute path, do not use ~
-
+TF_VAR_GCP_PROJECT_ID=$GCP_PROJECT_ID
+TF_VAR_GCP_REGION=$GCP_RESOURCE_REGION
+TF_VAR_GCP_DATASET_NAME=$GCP_DATASET_NAME
+TF_VAR_GCP_DATASET_TABLE_NAME=$GCP_DATASET_TABLE_NAME
+TF_VAR_COMPUTE_ENGINE_NAME=$GCP_COMPUTE_ENGINE_NAME
+TF_VAR_COMPUTE_ENGINE_MACHINE_TYPE=$GCP_COMPUTE_ENGINE_MACHINE_TYPE
+TF_VAR_COMPUTE_ENGINE_REGION=northamerica-northeast1-b # possible that the same region as used for project doesnt exist for VM
+TF_VAR_SERVICE_ACCOUNT_FILE_PATH=$GCP_API_KEY_FILE_PATH
+TF_VAR_SERVICE_ACCOUNT_EMAIL=$GCP_SERVICE_ACCOUNT_EMAIL
+TF_VAR_DBT_PROFILE_NAME= # this is for the profiles.yml file of dbt-core
+TF_VAR_PREFECT_AGENT_QUEUE=$PREFECT_AGENT_QUEUE_NAME
+TF_VAR_PREFECT_GCP_CREDENTIALS_BLOCK_NAME=$PREFECT_GCP_CREDENTIALS_BLOCK_NAME
+TF_VAR_PREFECT_DBT_CORE_BLOCK_NAME=$PREFECT_DBT_CORE_BLOCK_NAME
