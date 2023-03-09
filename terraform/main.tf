@@ -11,7 +11,7 @@ terraform {
 provider "google" {
   project = var.GCP_PROJECT_ID
   region = var.GCP_REGION
-  credentials = file(var.SERVICE_ACCOUNT_FILE_PATH)
+  credentials = file(var.LOCAL_SERVICE_ACCOUNT_FILE_PATH)
 }
 
 resource "google_bigquery_dataset" "dataset" {
@@ -35,7 +35,7 @@ resource "google_compute_instance" "vm" {
   metadata = {
     "EXTERNAL_VM_IP" = google_compute_address.static.address
     "GCP_DATASET_NAME" = var.GCP_DATASET_NAME
-    "SERVICE_ACCOUNT_FILE_PATH" = var.SERVICE_ACCOUNT_FILE_PATH
+    "REMOTE_SERVICE_ACCOUNT_FILE_PATH" = var.REMOTE_SERVICE_ACCOUNT_FILE_PATH
     "GCP_REGION" = var.GCP_REGION
     "GCP_PROJECT_ID" = var.GCP_PROJECT_ID
     "GCP_DATASET_TABLE_NAME" = var.GCP_DATASET_TABLE_NAME
@@ -43,6 +43,8 @@ resource "google_compute_instance" "vm" {
     "PREFECT_GCP_CREDENTIALS_BLOCK_NAME" = var.PREFECT_GCP_CREDENTIALS_BLOCK_NAME
     "PREFECT_AGENT_QUEUE" = var.PREFECT_AGENT_QUEUE
     "PREFECT_DBT_CORE_BLOCK_NAME" = var.PREFECT_DBT_CORE_BLOCK_NAME
+    "PREFECT_GITHUB_BLOCK_NAME" = var.PREFECT_GITHUB_BLOCK_NAME
+    "GITHUB_REPO_URL" = var.GITHUB_REPO_URL
   }
 
   metadata_startup_script = file("../utilities/setup-vm.sh")

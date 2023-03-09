@@ -6,11 +6,15 @@ This is an experiment of how to self host Prefect Orion server on Google Compute
 
 </br>
 </br>
+With this setup you can build and apply a deployment from a github action trigger. Then run your deployment via Prefect UI or api. Agent picks it up, and is running it in a subprocess on the VM.
+
+</br>
+</br>
 Both Prefect Orion and Prefect Agent are hosted here in the same VM with the help of tmux.
 
 </br>
 </br>
-Also experimenting here with some basic CI/CD to build and apply a deployment.
+GCP Service account json api key was manually added here by ssh-ing into the VM and adding it there directly.
 
 </br>
 </br>
