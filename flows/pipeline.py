@@ -50,10 +50,15 @@ def extract(month, year):
     return blob
 
 
+@task(log_prints=True)
+def just_for_fun():
+    print("well hello there")
+
+
 @flow(log_prints=True)
 def main(month=1, year=2019):
     """Run all parametrized extraction and loading flows"""
-
+    just_for_fun()
     blob = extract(month, year)
     load(blob)
     transform()
