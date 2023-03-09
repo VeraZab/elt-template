@@ -10,9 +10,17 @@ from prefect_gcp import GcpCredentials
 load_dotenv()
 
 
-@task()
+@task(log_prints=True)
 def transform():
-    dbt_op = DbtCoreOperation.load(os.getenv("PREFECT_DBT_CORE_BLOCK_NAME"))
+    # This path changes dynamically when on VM
+    dbt_path = f"{os.getcwd()}/dbt/template"
+
+    dbt_op = DbtCoreOperation(
+        commands=["dbt build"],
+        working_dir=dbt_path,
+        project_dir=dbt_path,
+    )
+
     dbt_op.run()
 
 
@@ -50,15 +58,9 @@ def extract(month, year):
     return blob
 
 
-@task(log_prints=True)
-def just_for_fun():
-    print(f"we are here: {os.getcwd()}")
-
-
 @flow(log_prints=True)
 def main(month=1, year=2019):
     """Run all parametrized extraction and loading flows"""
-    just_for_fun()
     blob = extract(month, year)
     load(blob)
     transform()
