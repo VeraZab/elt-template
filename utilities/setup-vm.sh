@@ -48,20 +48,20 @@ prefect config set PREFECT_API_URL="http://${EXTERNAL_VM_IP}:4200/api"
 mkdir ~/.dbt
 touch ~/.dbt/profiles.yml
 echo "
-    ${DBT_PROFILE_NAME}:
-        outputs:
-            dev:
-            dataset: ${GCP_DATASET_NAME}
-            job_execution_timeout_seconds: 300
-            job_retries: 1
-            keyfile: ${SERVICE_ACCOUNT_FILE_PATH}
-            location: ${GCP_REGION}
-            method: service-account
-            priority: interactive
-            project: ${GCP_PROJECT_ID}
-            threads: 4
-            type: bigquery
-        target: dev" >> ~/.dbt/profiles.yml
+${DBT_PROFILE_NAME}:
+  outputs:
+    dev:
+      dataset: ${GCP_DATASET_NAME}
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: ${SERVICE_ACCOUNT_FILE_PATH}
+      location: ${GCP_REGION}
+      method: service-account
+      priority: interactive
+      project: ${GCP_PROJECT_ID}
+      threads: 4
+      type: bigquery
+  target: dev" >> ~/.dbt/profiles.yml
 
 export SESSION_NAME="prefect"
 export WINDOW_1_NAME="server"

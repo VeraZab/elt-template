@@ -30,10 +30,6 @@ def load(blob):
     dataset_name = os.getenv("GCP_DATASET_NAME")
     dataset_table_name = os.getenv("GCP_DATASET_TABLE_NAME")
 
-    for key, value in os.environ.items():
-        if "PREFECT" in key and key != "PREFECT_API_URL":
-            print(f"{key}={value}")
-
     gcp_credentials = GcpCredentials.load(os.getenv("PREFECT_GCP_CREDENTIALS_BLOCK_NAME"))
 
     blob.to_gbq(
