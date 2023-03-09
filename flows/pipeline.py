@@ -52,7 +52,7 @@ def extract(month, year):
 
 @task(log_prints=True)
 def just_for_fun():
-    print("well hello there")
+    print(f"we are here: {os.getcwd()}")
 
 
 @flow(log_prints=True)
