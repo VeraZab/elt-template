@@ -47,3 +47,9 @@ jobs:
           --work-queue $PREFECT_AGENT_QUEUE_NAME \
           --storage-block github/$PREFECT_GITHUB_BLOCK_NAME \
           --apply
+
+      - name: upload artifact 
+        uses: actions/upload-artifact@v3
+          with:
+            name: main-deployment.yaml
+            path: main-deployment.yaml
