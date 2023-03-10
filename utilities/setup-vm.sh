@@ -86,5 +86,15 @@ tmux send-keys -t "$SESSION_NAME:$WINDOW_1_NAME" 'prefect orion start --host 0.0
 tmux new-window -n "$WINDOW_2_NAME" -t "$SESSION_NAME"
 tmux send-keys -t "$SESSION_NAME:$WINDOW_2_NAME" "prefect agent start -q $PREFECT_AGENT_QUEUE" C-m
 
+DELAY=5
+
+echo "Waiting for server to become responsive..."
+while ! ping -c 1 $EXTERNAL_VM_IP &> /dev/null
+do
+  sleep $DELAY
+done
+
+echo "Server is now responsive."
+
 # after server started create prefect blocks
 python3.11 utilities/setup-prefect-blocks.py
