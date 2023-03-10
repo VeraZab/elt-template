@@ -14,7 +14,7 @@ Both Prefect Orion and Prefect Agent are hosted here in the same VM with the hel
 
 </br>
 </br>
-GCP Service account json api key was manually added here by ssh-ing into the VM and adding it there directly.
+GCP Service account json api key was manually added here by ssh-ing into the VM and adding it there directly. The `utilities/setup-prefect-blocks.py` script was also run manually to setup Prefect blocks.
 
 </br>
 </br>
